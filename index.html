@@ -102,7 +102,24 @@
 
           /* PUT ANY CHANGES TO THE JAVASCRIPT HERE  */
           
-          
+          var imageData = context.getImageData(0,0,600,500);
+          /* this part of the code should get the original image from the first canvas */
+          var correctedData = imageData;
+          /* this saves the image values temporarily */
+          for(var a = 0; a < imageData.data.length; a = a + 4)
+              {
+                  imageData.data[a] = 0;
+                  // This changes all red aspects to 0
+                  imageData.data[a+1] = 0;
+                  // This changes all green aspects to 0
+                  imageData.data[a+2] = imageData.data[a+2];
+                  //this leaves the blue aspect as normal so the image will show only blue
+                   imageData.data[a+3] = 255;
+                   //this eaves the opacity at full opacity so the intensity of the blue will be strong
+              }
+              
+              context2.putImageData(imageData, 0, 0); 
+              //This part of code should put the new all blue image onto the second canvas
           
           
         } // end of img.onload
