@@ -24,11 +24,11 @@
   http://stackoverflow.com/questions/11929099/html5-canvas-drawimage-ratio-bug-ios
   
   Brief Description of Goal of Code:
-  The purpose of this code is to show a blue intensified image of a file chosen by the user and show it in an
-  adjacent canvas.
+  The purpose of this code is to create an app that will allow you to pick an image and obtain a basic image analysis
+  when a region of interest (ROI) is chosen.
  
   Known Issues:
-  The second canvas wouldn't show up properly but I was able to fix it after several commits. (3.29.16)
+  had to put the analysis in an alert because I couldn't set up the table
 -->
 
  <head>
@@ -137,6 +137,22 @@
     } // end of the else statement if file in NOT an image
   }); // end of the fileInput.addEventListener function
  } // end of the window.onload function
+ 
+ //the following functions sould allow the app to work with the onTOuch events
+ //this function should start to work when the window loads
+ function initialise(){
+  var canvas=document.getElementById("myCanvas");
+  canvas.addEventListener("touchstart",doTouchStart,false);
+ }
+ //this function will allow the app to work by using touch
+ function doTouchStart(event){
+  event.preventDefault();
+  //this code should stop other touch gestures from affecting the function by only allowing a single touch to be recognized by the function;
+  canvas_x=event.targetTouches[0].pageX;
+  canvas_y=event.targetTouches[0].pageY;
+  alert("X=" + canvas_x +  "Y=" + canvas_y);
+  //the info from the photo analysis will be shown in an alert box
+ }
  </script>
  
  </head>
