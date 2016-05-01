@@ -158,6 +158,20 @@
  </head>
 
  <body>
+  <body onload=initialise()>
+  <div data-role="page">
+    <div data-role="header">
+    <h1>Welcome!</h1></div><!-- /header -->
+    <div data-role="content">	
+      <div>
+        <!--These are instructions on how to work the app-->
+        1. First, choose an image to analyze by clicking the orang button. <br>
+        2. After the image has loaded, choos a region of the image that you would like analyzed. <br>
+        3. Once this region is selected, RGB percentages will be calculated and displayed. <br>
+        <input type="file" id="fileInput" STYLE="background-color: #FF6600;">
+        <!--this code allows the user to choose an image from his/her personal folder-->
+      </div>
+      <div id="messageDisplayArea"></div>
   <div data-role="page">
     <div data-role="header">
     <h1>Primary Colors</h1></div><!-- /header -->
