@@ -165,13 +165,14 @@
     <div data-role="content">	
       <div>
         <!--These are instructions on how to work the app-->
-        1. First, choose an image to analyze by clicking the orang button. <br>
+        1. First, choose an image to analyze by clicking the orange button. <br>
         2. After the image has loaded, choos a region of the image that you would like analyzed. <br>
         3. Once this region is selected, RGB percentages will be calculated and displayed. <br>
         <input type="file" id="fileInput" STYLE="background-color: #FF6600;">
-        <!--this code allows the user to choose an image from his/her personal folder-->
+        <!--this code should let the user pick any image they would like-->
       </div>
       <div id="messageDisplayArea"></div>
+      
   <div data-role="page">
     <div data-role="header">
     <h1>Primary Colors</h1></div><!-- /header -->
@@ -182,24 +183,7 @@
         <input type="file" id="fileInput" STYLE="background-color: #FF6600;">
       </div>
       <div id="messageDisplayArea"></div>
-      
-      <canvas id="myCanvas" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas>
-      <script> /* This script initiates the cavas and puts the text on the canvas "myCanvas" */
-        var canvas = document.getElementById('myCanvas');
-        var context = canvas.getContext("2d");
-        context.font = '20pt Calibri';
-        context.fillStyle = "black";
-        context.fillText("Original image will go here", 10, 20);
-      </script>
-      
-       <canvas id="dataCanvas" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas>
-      <script> /* This script provides the second canvas for the new image */
-        var canvas2 = document.getElementById('dataCanvas');
-        var context2 = canvas2.getContext("2d");
-        context2.font = '20pt Calibri';
-        context2.fillStyle = "black";
-        context2.fillText("New blue intensified image here", 10, 20);
-        
+     
       </script>
 
     </div><!-- /content -->
